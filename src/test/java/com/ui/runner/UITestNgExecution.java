@@ -4,20 +4,37 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.main.utils.ScenariosSelector;
 import com.ui.steps.BeforeActions;
 
-public class UITestNgExecution {
-	
+
+
+
+@CucumberOptions(	
+		features="test-output/common.feature",
+		dryRun=false,
+		monochrome=true,
+		glue= {"com.ui.steps"}
+)
+public class UITestNgExecution extends AbstractTestNGCucumberTests
+{
 	public static String strResultConsolidatedFolder="";
-	ScenariosSelector scenariosSelector=new ScenariosSelector();
+	
+	
+	@Override
+	@DataProvider(parallel=false)
+	public Object[][] scenarios(){
+		return super.scenarios();
+	}
 	
 	@BeforeClass
 	public void setup() {
-		
 		System.out.println("Setting up Data & Configuration started.......");
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyymmdd_hhmmss");
 		Date curDate=new Date();
@@ -30,9 +47,8 @@ public class UITestNgExecution {
 		System.out.println("Result Folder = " +strResultFolder);
 	}
 	
-  @Test
-  public void f() {
-	  System.out.println("Test Started............");
-	  scenariosSelector.RunSelector();
-  }
+	@Test
+	public void runTestNg() {
+		System.out.println("Running TestNg................");
+	}
 }
