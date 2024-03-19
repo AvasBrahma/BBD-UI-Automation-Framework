@@ -57,7 +57,6 @@ public class BeforeActions {
 	
 	@Before
 	public static void setUp() {
-		System.out.println("Before:  Setting up Driver");
 		SeleniumDriver.setUpDriver();
 		
 	}

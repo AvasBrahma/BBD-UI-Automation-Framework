@@ -27,12 +27,6 @@ public class UITestNgExecution extends AbstractTestNGCucumberTests
 	public static String strResultConsolidatedFolder="";
 	
 	
-	@Override
-	@DataProvider(parallel=false)
-	public Object[][] scenarios(){
-		return super.scenarios();
-	}
-	
 	@BeforeClass
 	public void setup() {
 		System.out.println("Setting up Data & Configuration started.......");
@@ -50,5 +44,10 @@ public class UITestNgExecution extends AbstractTestNGCucumberTests
 	@Test
 	public void runTestNg() {
 		System.out.println("Running TestNg................");
+	}
+	
+	
+	public void afterSteps() {
+		
 	}
 }

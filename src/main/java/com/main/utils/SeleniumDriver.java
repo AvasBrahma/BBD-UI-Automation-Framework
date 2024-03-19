@@ -1,6 +1,8 @@
 package com.main.utils;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class SeleniumDriver {
 	
@@ -11,8 +13,18 @@ public class SeleniumDriver {
 	private SeleniumDriver()
 	{
 		
-		System.out.println("Setting up Selenium Driver Started...............");
-		
+		System.out.println("Setting up Selenium Driver..............");
+		String strBrowserName=ConfigDetails.getPropValue("Browser");
+		String strChromeDriverPath=ConfigDetails.getPropValue("ChromeDriverPath");
+		//String strChromeBinaryPath=ConfigDetails.getPropValue("ChromeBinaryPath");
+		if(strBrowserName.equalsIgnoreCase("Chrome")) {
+			ChromeOptions chromeOptions=new ChromeOptions();
+			chromeOptions.setExperimentalOption("useAutomationExtension", false);
+			System.setProperty("webdriver.chrome.driver", strChromeDriverPath);
+			//chromeOptions.setBinary(strChromeBinaryPath);
+			
+			driver=new ChromeDriver(chromeOptions);
+		}
 	}   
 	
 	
