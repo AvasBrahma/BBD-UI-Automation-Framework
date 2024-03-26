@@ -12,12 +12,15 @@ public class CommonUIActions {
 	String errorLog="";
 	CommonLocators commonLocators=null;
 	
-	
-	public void setUpInitialConfig() {
-		
-		String strURL="https://google.com";
-		
+	public CommonUIActions() {
+		this.commonLocators=new CommonLocators();
 	}
+	public void setScreenName(String strScreenSheetName) {
+		if(!strScreenSheetName.trim().isEmpty()) {
+			commonLocators.setObjectSheetName(strScreenSheetName);
+		}
+	}
+	
 	
 	public void enterURL(String strURL) {
 		SeleniumDriver.getDriver().get(strURL);

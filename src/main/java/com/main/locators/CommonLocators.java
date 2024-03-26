@@ -21,6 +21,12 @@ public class CommonLocators {
 	public CommonLocators() {
 		strObjectSheetName="Common";
 	}
+	public void setObjectSheetName(String strSheetName) {
+		if(!strSheetName.equalsIgnoreCase(strObjectSheetName)) {
+			strObjectSheetName=strSheetName;
+			commonObjects=GetObjectData(strObjectSheetName);
+		}
+	}
 	
 	public WebElement getElementFromID(String strObjectId) {
 		return GetElementFromId(strObjectId, strObjectSheetName);

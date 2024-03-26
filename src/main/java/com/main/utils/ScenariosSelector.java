@@ -125,7 +125,7 @@ public class ScenariosSelector {
 		String strPath=System.getProperty("user.dir");
 		try {
 			Connection connection;
-			String strTestDataPath=strPath+"/"+ConfigDetails.getPropValue("TestDataXLS_FilePath");
+			String strTestDataPath=strPath+"/"+ConfigDetails.getPropValue("TestDataXLSFilePath");
 			connection=fillo.getConnection(strTestDataPath);
 			
 			String strQuery="Select * from " + strTableName + " Where ToBeExecuted ='Y'";

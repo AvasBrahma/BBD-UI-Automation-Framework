@@ -2,7 +2,9 @@ package com.ui.steps;
 
 import com.main.actions.CommonUIActions;
 import com.main.utils.ConfigDetails;
+import com.main.utils.SeleniumDriver;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -28,5 +30,12 @@ public class CommonUISteps {
 	
 	
 	
-	
+	@After
+	public void tearDown() {
+		System.out.println("Tear Down - Quit Driver......................");
+		if(SeleniumDriver.getDriver()!=null) {
+			SeleniumDriver.getDriver().quit();
+			System.out.println("Driver Quit....");
+		}
+	}
 }

@@ -1,0 +1,33 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x000000010c8453d7, pid=5278, tid=11011
+#
+# JRE version: OpenJDK Runtime Environment AdoptOpenJDK (15.0.2+7) (build 15.0.2+7)
+# Java VM: OpenJDK 64-Bit Server VM AdoptOpenJDK (15.0.2+7, mixed mode, sharing, tiered, compressed oops, g1 gc, bsd-amd64)
+# Problematic frame:
+# C  [libjimage.dylib+0x33d7]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x27
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   https://github.com/AdoptOpenJDK/openjdk-support/issues
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:+ShowCodeDetailsInExceptionMessages -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:59482 -javaagent:/Users/avasbrahma/eclipse/jee-2022-09/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/413/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 com.ui.runner.TestRunner
+
+Host: MacBookAir10,1 x86_64 2400 MHz, 8 cores, 8G, Darwin 23.2.0
+Time: Wed Mar 20 12:34:55 2024 IST elapsed time: 2.817127 seconds (0d 0h 0m 2s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007feb86808200):  JavaThread "main" [_thread_in_vm, id=11011, stack(0x000000030c732000,0x000000030c832000)]
+
+Stack: [0x000000030c732000,0x000000030c832000],  sp=0x000000030c82d590,  free space=1005k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.dylib+0x33d7]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x27
+C  [libjimage.dylib+0x38b0]  JIMAGE_FindResource+0xd0
+V  [libjvm.dylib+0x29911a]  ClassPathImageEntry::open_stream_for_loader(char const*, ClassLoaderData*, Thread*)+0x7a
+V
