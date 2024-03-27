@@ -118,4 +118,20 @@ public class BeforeActions {
 		}
 		
 	}
+	
+	public static String GetTestDataValue(String strKey) {
+		
+		strKey=strKey.trim();
+		String strDataValue="";
+		if(htblTestData!=null) {
+			if(htblTestData.containsKey(strKey)) {
+				strDataValue=htblTestData.get(strKey);
+				String strLogText=strKey+ " = '" + strDataValue + "'";
+				System.out.println(strLogText);
+			}
+		}
+		return strDataValue;
+	}
+	
+	
 }

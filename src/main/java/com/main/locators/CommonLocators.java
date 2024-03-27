@@ -38,6 +38,7 @@ public class CommonLocators {
 			strObjectSheetName=strScreenName;
 			commonObjects=GetObjectData(strObjectSheetName);
 		}
+		
 		if(commonObjects.contains(strObjectId)) {
 		   String strXPath=commonObjects.get(strObjectId);
 		   try {
@@ -60,7 +61,7 @@ public class CommonLocators {
 		Hashtable<String,String> htblObjectData=new Hashtable<String, String>();
 		Connection connection;
 		try {
-			String strLocatorsFilePath=System.getProperty("user.dir")+"/"+ConfigDetails.getPropValue("LocatorTestData");
+			String strLocatorsFilePath=System.getProperty("user.dir")+"/"+ConfigDetails.getPropValue("LocatorTestDataPATH");
 			connection=fillo.getConnection(strLocatorsFilePath);
 			
 			ArrayList<String> arrExistingTables=connection.getMetaData().getTableNames();

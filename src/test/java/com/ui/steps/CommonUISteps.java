@@ -20,6 +20,7 @@ public class CommonUISteps {
 	}
 	@And("^Enter the input text for \"([^\"]*)\" as \"([^\"]*)\" in the \"([^\"]*)\" Screen$")
 	public void enterInputText(String strTextBoxName, String strTextValue, String strScreenName) {
+		commonUIAct.setScreenName("Login");
 		commonUIAct.inputTextField(strTextBoxName, strTextValue, strScreenName);
 	}
 	
