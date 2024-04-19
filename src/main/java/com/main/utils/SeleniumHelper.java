@@ -22,13 +22,27 @@ public class SeleniumHelper {
 				webEleLocator.sendKeys(strDataInput);
 				strLogText=strLocatorName+ " is entered with " + strDataInput + " Succuessfully";
 				break;
-				
+			case "DOUBLECLICK":
+				actions.doubleClick(webEleLocator).perform();
+                strLogText=strLocatorName+ " is double clicked successfully";
+                break;
+                
 			default:
 				break;
 			}
 		}
 		
 		return blnResult;
+	}
+	
+	public static void ImplicitWait(int intSeconds) {
+		try {
+			int seconds=intSeconds*1000;
+			Thread.sleep(seconds);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 	}
 
 }

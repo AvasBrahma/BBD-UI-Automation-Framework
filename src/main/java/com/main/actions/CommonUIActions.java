@@ -51,5 +51,10 @@ public class CommonUIActions {
 			errorLog=strButtonName + " Object Unavailable";
 		}
 	}
+	
+	public void verifyLabelFieldValue(String strLabelName, String strLabelValue, String strScreenName) {
+		SeleniumHelper.ImplicitWait(5);
+		
+	}
 
 }

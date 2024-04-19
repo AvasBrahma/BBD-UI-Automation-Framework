@@ -39,7 +39,7 @@ public class CommonLocators {
 			commonObjects=GetObjectData(strObjectSheetName);
 		}
 		
-		if(commonObjects.contains(strObjectId)) {
+		if(commonObjects.containsKey(strObjectId)) {
 		   String strXPath=commonObjects.get(strObjectId);
 		   try {
 			   objEelement=SeleniumDriver.getDriver().findElement(By.xpath(strXPath));
@@ -53,7 +53,7 @@ public class CommonLocators {
 			   errorLog="Not able to find Data in Locators Test Data for "+ strObjectId;
 			   System.out.println(errorLog);
 		}
-		return null;
+		return objEelement;
 	}
 
 	public Hashtable<String, String> GetObjectData(String strSheetName) {
@@ -73,9 +73,10 @@ public class CommonLocators {
 			while(recordset.next()) {
 				String strObjectName=recordset.getField("ObjectName");
 				String strObjectXPATH=recordset.getField("ObjectXPATH");
-				
+				strObjectName=strObjectName.trim();
+				strObjectXPATH=strObjectXPATH.trim();
 				if(!strObjectName.isEmpty()) {
-					strObjectName=strObjectName.toUpperCase();
+					//strObjectName=strObjectName.toUpperCase();
 					htblObjectData.put(strObjectName, strObjectXPATH);
 				}
 			}

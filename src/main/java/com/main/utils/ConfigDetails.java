@@ -42,6 +42,7 @@ public class ConfigDetails {
 	}
 	
 	public static String getPropValue(String strKey) {
+		
 		if(propConfig.isEmpty()) {
 			getConfigValue();
 		}
