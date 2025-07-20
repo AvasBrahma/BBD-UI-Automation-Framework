@@ -33,8 +33,7 @@ Design Pattern: Page Object Model (POM)
 ├── TestData.xlsx             # Excel file for input test data
 ├── config.properties         # Global configuration
 ├── testng.xml                # TestNG suite configuration
-├── pom.xml                   # Maven project descriptor
-n
+├── pom.xml                   # Maven project descripton
 
 
 
